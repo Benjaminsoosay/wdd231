@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <h1 class="logo">Course Dashboard</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="#progress" class="nav-link">Progress</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="course-controls">
+            <h2>Course Filter</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-subject="all">All Courses</button>
+                <button class="filter-btn" data-subject="web">Web Development</button>
+                <button class="filter-btn" data-subject="programming">Programming</button>
+                <button class="filter-btn" data-subject="business">Business</button>
+            </div>
+            
+            <div class="credits-display">
+                <h3>Total Credits: <span id="total-credits">0</span></h3>
+            </div>
+        </section>
+
+        <section id="course-list">
+            <h2>My Courses</h2>
+            <div id="course-container" class="courses-grid">
+                <!-- Courses will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="copyright-year">2024</span> Course Dashboard. All rights reserved.</p>
+            <p>Last modified: <span id="last-modified">January 1, 2024</span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/courses.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
