@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Home Page</title>
+
+    
+    <meta name="description" content="Explore your course dashboard to filter, track, and manage your academic progress.">
+    <meta name="author" content="Benjamin">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -29,7 +39,6 @@
                 <button class="filter-btn" data-subject="programming">Programming</button>
                 <button class="filter-btn" data-subject="business">Business</button>
             </div>
-            
             <div class="credits-display">
                 <h3>Total Credits: <span id="total-credits">0</span></h3>
             </div>
@@ -39,6 +48,15 @@
             <h2>My Courses</h2>
             <div id="course-container" class="courses-grid">
                 <!-- Courses will be dynamically inserted here -->
+            </div>
+        </section>
+
+    
+        <section id="course-progress">
+            <h2>Progress Overview</h2>
+            <p>Track your course completion and credit accumulation over time.</p>
+            <div class="progress-chart">
+                <!-- Progress chart or summary goes here -->
             </div>
         </section>
     </main>
