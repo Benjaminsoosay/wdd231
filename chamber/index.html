@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Springfield Chamber of Commerce</title>
-  <meta name="description" content="Join the Springfield Chamber of Commerce to connect with local businesses, access resources, and grow your enterprise in our thriving community." />
+  <title>Wetaskiwin Chamber of Commerce</title>
+  <meta name="description" content="Join the Wetaskiwin Chamber of Commerce to connect with local businesses, access resources, and grow your enterprise in our thriving community." />
   <link rel="stylesheet" href="styles/chamber.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="header-container">
-      <div class="logo">
-        <img src="images/logo.svg" alt="Springfield Chamber logo" width="60" height="60" />
-        <div class="logo-text">
-          <h1>Springfield</h1>
-          <p>Chamber of Commerce</p>
-        </div>
+      <div class="logo-text">
+        <h1>Wetaskiwin</h1>
+        <p>Chamber of Commerce</p>
       </div>
       <nav>
         <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
@@ -33,6 +31,7 @@
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
     <!-- Hero Section -->
     <section class="hero">
@@ -40,10 +39,10 @@
         <picture>
           <source media="(max-width: 600px)" srcset="images/hero-small.jpg" />
           <source media="(max-width: 1024px)" srcset="images/hero-medium.jpg" />
-          <img src="images/hero-image.jpg" alt="Springfield downtown skyline" width="1200" height="600" />
+          <img src="images/hero-image.jpg" alt="Wetaskiwin downtown skyline" width="1200" height="600" />
         </picture>
         <div class="hero-content">
-          <h2>Welcome to Springfield</h2>
+          <h2>Welcome to Wetaskiwin</h2>
           <p>Connecting businesses, building community</p>
           <a href="join.html" class="cta-button">Join the Chamber</a>
         </div>
@@ -74,36 +73,22 @@
 
     <!-- Weather Section -->
     <section class="weather">
-      <h2>Springfield Weather</h2>
+      <h2>Wetaskiwin Weather</h2>
       <div class="weather-container">
         <div class="current-weather">
           <h3>Current Conditions</h3>
           <div class="weather-info">
             <div class="temp-icon">
-              <span id="current-temp">72°F</span>
-              <img id="weather-icon" src="images/sunny.png" alt="Sunny weather icon" width="64" height="64" />
+              <span id="current-temp">--°C</span>
+              <img id="weather-icon" src="images/sunny.png" alt="Weather icon" width="64" height="64" />
             </div>
-            <p id="weather-desc">Sunny</p>
+            <p id="weather-desc">Loading...</p>
           </div>
         </div>
         <div class="weather-forecast">
           <h3>3-Day Forecast</h3>
           <div class="forecast-grid">
-            <div class="forecast-day">
-              <p class="day">Tomorrow</p>
-              <p class="forecast-temp">75°F</p>
-              <p class="forecast-desc">Mostly Sunny</p>
-            </div>
-            <div class="forecast-day">
-              <p class="day">Day 2</p>
-              <p class="forecast-temp">68°F</p>
-              <p class="forecast-desc">Partly Cloudy</p>
-            </div>
-            <div class="forecast-day">
-              <p class="day">Day 3</p>
-              <p class="forecast-temp">70°F</p>
-              <p class="forecast-desc">Sunny</p>
-            </div>
+            <!-- JS will insert forecast days here -->
           </div>
         </div>
       </div>
@@ -113,35 +98,40 @@
     <section class="company-spotlights">
       <h2>Member Spotlights</h2>
       <div id="spotlight-container" class="spotlight-grid">
-        <!-- Dynamic content from JSON will be inserted here -->
+        <!-- Dynamic content from members.json will be inserted here -->
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-container">
-      <div class="footer-info">
-        <div class="footer-logo">
-          <img src="images/logo.svg" alt="Springfield Chamber logo" width="40" height="40" />
-          <div>
-            <h3>Springfield Chamber of Commerce</h3>
-            <p>123 Main Street, Springfield, USA</p>
-          </div>
-        </div>
-        <div class="contact-info">
-          <p>info@springfieldchamber.org</p>
-          <p>+17052019653</p>
-        </div>
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>123 Main Street, Wetaskiwin, AB</p>
+        <p>Email: info@wetaskiwincoc.ca</p>
+        <p>Phone: +1 (780) 352-8003</p>
       </div>
-      <div class="footer-meta">
-        <p>&copy; <span id="current-year">2023</span> Springfield Chamber of Commerce</p>
-        <p>WDD 231 Course Project</p>
+      <div class="social-links">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/yourchamber.ca" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/yourchamberca" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/leduc-regional-chamber-of-commerce" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="developer-info">
+        <p>&copy; <span id="current-year"></span> Wetaskiwin Chamber of Commerce</p>
+        <p>Daniel Soosay Iwuchukwu | WDD 231</p>
         <p>Last Modified: <span id="last-modified"></span></p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="scripts/chamber.js"></script>
-  <script src="scripts/home.js"></script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+    document.getElementById("last-modified").textContent = document.lastModified;
+  </script>
 </body>
 </html>
+v
