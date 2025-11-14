@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Downtown Cafe",
+    "address": "123 Main Street, Wetaskiwin",
+    "phone": "(780) 111-2222",
+    "website": "https://downtowncafe.ca",
+    "image": "images/downtown-cafe.jpg",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Tech Solutions Inc.",
+    "address": "456 Tech Park, Wetaskiwin",
+    "phone": "(780) 333-4444",
+    "website": "https://techsolutions.ca",
+    "image": "images/tech-solutions.jpg",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Green Thumb Nursery",
+    "address": "789 Garden Lane, Wetaskiwin",
+    "phone": "(780) 555-6666",
+    "website": "https://greenthumb.ca",
+    "image": "images/thumb-nursery.webp",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Family Medical Clinic",
+    "address": "321 Health Avenue, Wetaskiwin",
+    "phone": "(780) 777-8888",
+    "website": "https://familyclinic.ca",
+    "image": "images/family-medical.jpg",
+    "membershipLevel": "Silver"
+  },
+  {
+    "name": "Main Street Books",
+    "address": "159 Main Street, Wetaskiwin",
+    "phone": "(780) 999-0000",
+    "website": "https://mainstreetbooks.ca",
+    "image": "images/main-street-books.jpg",
+    "membershipLevel": "Bronze"
+  },
+  {
+    "name": "Fit Life Gym",
+    "address": "753 Fitness Blvd, Wetaskiwin",
+    "phone": "(780) 222-3333",
+    "website": "https://fitlifegym.ca",
+    "image": "images/fit-life-gym.jpg",
+    "membershipLevel": "Gold"
+  },
+  {
+    "name": "Creative Designs & Decor",
+    "address": "852 Design Street, Wetaskiwin",
+    "phone": "(780) 444-5555",
+    "website": "https://creativedecor.ca",
+    "image": "images/creative-design.jpg",
+    "membershipLevel": "Silver"
+  }
+]
