@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - MembershipHub</title>
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">MembershipHub</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="join.html">Membership</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="thank-you">
+            <h2>Thank You for Your Application!</h2>
+            <p>We've received your membership application and will process it shortly.</p>
+            
+            <div class="user-data">
+                <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+                <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+                <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+                <p><strong>Business/Organization:</strong> <span id="displayOrganization"></span></p>
+                <p><strong>Membership Level:</strong> <span id="displayMembershipLevel"></span></p>
+                <p><strong>Application Date:</strong> <span id="displayTimestamp"></span></p>
+            </div>
+            
+            <p>We'll contact you at the email address you provided within 2 business days.</p>
+            <a href="index.html" class="submit-btn">Return to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MembershipHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters and display them
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        document.getElementById('displayFirstName').textContent = urlParams.get('firstName') || 'Not provided';
+        document.getElementById('displayLastName').textContent = urlParams.get('lastName') || 'Not provided';
+        document.getElementById('displayEmail').textContent = urlParams.get('email') || 'Not provided';
+        document.getElementById('displayPhone').textContent = urlParams.get('phone') || 'Not provided';
+        document.getElementById('displayOrganization').textContent = urlParams.get('organization') || 'Not provided';
+        document.getElementById('displayMembershipLevel').textContent = urlParams.get('membershipLevel') || 'Not provided';
+        
+        // Format the timestamp
+        const timestamp = urlParams.get('timestamp');
+        if (timestamp) {
+            const date = new Date(timestamp);
+            document.getElementById('displayTimestamp').textContent = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        } else {
+            document.getElementById('displayTimestamp').textContent = 'Not provided';
+        }
+    </script>
+</body>
+</html>
