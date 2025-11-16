@@ -100,9 +100,18 @@
           <input type="tel" id="phone" name="phone" autocomplete="tel" title="Mobile Phone" required>
         </div>
         
+        <!-- ✅ Added Organization Name -->
         <div class="form-group">
-          <label for="organization" class="required">Organization Title</label>
-          <input type="text" id="organization" name="organization" autocomplete="organization-title" 
+          <label for="organizationName" class="required">Organization Name</label>
+          <input type="text" id="organizationName" name="organizationName" 
+                 autocomplete="organization" title="Organization Name" required>
+        </div>
+
+        <!-- ✅ Organization Title -->
+        <div class="form-group">
+          <label for="organizationTitle" class="required">Organization Title</label>
+          <input type="text" id="organizationTitle" name="organizationTitle" 
+                 autocomplete="organization-title" 
                  pattern="[A-Za-z\s\-]{7,}" title="Organization Title" required>
         </div>
 
@@ -183,6 +192,11 @@
       <p>&copy; 2023 MembershipHub. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="scripts/join.js"></script>
+</body>
+</html>
+
 
   <script src="scripts/join.js"></script>
 </body>
