@@ -1,184 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chamber of Commerce Directory - Connecting local businesses in our community">
-  <meta name="author" content="Benjamin Soosay Iwuchukwu">
-  <meta property="og:title" content="Wetaskiwin Chamber of Commerce Directory">
-  <meta property="og:description" content="Discover and connect with local businesses in our community through our comprehensive directory">
-  <meta property="og:image" content="https://benjaminsoosay.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://benjaminsoosay.github.io/wdd231/chamber/directory.html">
-  <meta property="og:type" content="website">
-  <title>Chamber Directory</title>
-
-  <!-- External stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- Local styles and favicon -->
-  <link rel="stylesheet" href="styles/directory.css">
-  <link rel="icon" href="images/Favicon.png">
-
-  <!-- Scripts -->
-  <script src="scripts/directory.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Directory | Chamber of Commerce</title>
+    <meta name="description" content="Explore our local business directory. Find trusted companies, services, and professionals in our community.">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="images/logo.png" alt="Chamber Logo">
-        <h1>Wetaskiwin Chamber of Commerce</h1>
-      </div>
-      <nav>
-        <button class="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html" class="active">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Chamber of Commerce</h1>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                     <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Discover</a></li>
+                     <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h2>Business Directory</h2>
-      <p>Connecting our community with local businesses</p>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Business Directory</h1>
+            <p>Discover local businesses and services in our community</p>
+        </div>
     </section>
 
-    <section class="directory">
-      <h2 class="visually-hidden">Business Listings</h2>
-      <div class="container">
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/Downtown-cafe.jpg" alt="Downtown Cafe">
-          </div>
-          <div class="business-info">
-            <h3>Downtown Cafe</h3>
-            <p><strong>Category:</strong> Restaurant</p>
-            <p>Cozy cafe offering breakfast and lunch options.</p>
-            <p><strong>Contact:</strong> downtowncafe@email.com</p>
-          </div>
+    <!-- Directory Controls -->
+    <section class="directory-controls">
+        <div class="container">
+            <div class="controls-wrapper">
+                <div class="view-toggle">
+                    <button id="grid-view" class="active" aria-label="Grid view">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <rect x="2" y="2" width="5" height="5" rx="1"/>
+                            <rect x="2" y="9" width="5" height="5" rx="1"/>
+                            <rect x="9" y="2" width="5" height="5" rx="1"/>
+                            <rect x="9" y="9" width="5" height="5" rx="1"/>
+                            <rect x="16" y="2" width="2" height="5" rx="1"/>
+                            <rect x="16" y="9" width="2" height="5" rx="1"/>
+                        </svg>
+                    </button>
+                    <button id="list-view" aria-label="List view">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <rect x="2" y="3" width="16" height="1" rx="0.5"/>
+                            <rect x="2" y="6" width="16" height="1" rx="0.5"/>
+                            <rect x="2" y="9" width="16" height="1" rx="0.5"/>
+                            <rect x="2" y="12" width="16" height="1" rx="0.5"/>
+                            <rect x="2" y="15" width="16" height="1" rx="0.5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-filter">
+                    <input type="text" id="search-input" placeholder="Search businesses...">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="retail">Retail</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="service">Professional Services</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="technology">Technology</option>
+                        <option value="construction">Construction</option>
+                    </select>
+                    <select id="membership-filter">
+                        <option value="all">All Memberships</option>
+                        <option value="gold">Gold Members</option>
+                        <option value="silver">Silver Members</option>
+                        <option value="bronze">Bronze Members</option>
+                        <option value="np">Non-Profit</option>
+                    </select>
+                </div>
+            </div>
         </div>
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/tech-solutions.jpg" alt="Tech Solutions Inc.">
-          </div>
-          <div class="business-info">
-            <h3>Tech Solutions Inc.</h3>
-            <p><strong>Category:</strong> IT Services</p>
-            <p>Providing IT support and software development.</p>
-            <p><strong>Contact:</strong> info@techsolutions.com</p>
-          </div>
-        </div>
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/Thumb-Nursery.webp" alt="Green Thumb Nursery">
-          </div>
-          <div class="business-info">
-            <h3>Green Thumb Nursery</h3>
-            <p><strong>Category:</strong> Retail</p>
-            <p>Local nursery with a wide selection of plants and gardening supplies.</p>
-            <p><strong>Contact:</strong> greenthumb@plants.ca</p>
-          </div>
-        </div>
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/family-medical.jpg" alt="Family Medical Clinic">
-          </div>
-          <div class="business-info">
-            <h3>Family Medical Clinic</h3>
-            <p><strong>Category:</strong> Healthcare</p>
-            <p>Comprehensive healthcare services for the entire family.</p>
-            <p><strong>Contact:</strong> contact@familyclinic.com</p>
-          </div>
-        </div>
-
-        <div class="business-card">
-          <div class="business-image">
-          <img src="images/main-street-books.jpg" alt="Main Street Books">
-
-          </div>
-          <div class="business-info">
-            <h3>Main Street Books</h3>
-            <p><strong>Category:</strong> Retail</p>
-            <p>Independent bookstore featuring local authors and a wide selection of genres.</p>
-            <p><strong>Contact:</strong> info@mainstreetbooks.ca</p>
-          </div>
-        </div>
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/fit-life-gym.jpg" alt="Fit Life Gym">
-          </div>
-          <div class="business-info">
-            <h3>Fit Life Gym</h3>
-            <p><strong>Category:</strong> Fitness</p>
-            <p>Full-service gym with personal training and group classes.</p>
-            <p><strong>Contact:</strong> support@fitlifegym.com</p>
-          </div>
-        </div>
-
-        <div class="business-card">
-          <div class="business-image">
-            <img src="images/creative-design.jpg" alt="Creative Designs & Decor">
-          </div>
-          <div class="business-info">
-            <h3>Creative Designs & Decor</h3>
-            <p><strong>Category:</strong> Interior Design</p>
-            <p>Interior design services and custom design solutions.</p>
-            <p><strong>Contact:</strong> designs@creativedecor.com</p>
-          </div>
-        </div>
-
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="contact-info">
-        <h3>Contact Us</h3>
-        <p><i class="fas fa-map-marker-alt"></i> 5201 50 Avenue, Wetaskiwin, AB T9A 0S8</p>
-        <p><i class="fas fa-phone"></i> 780-352-8003</p>
-        <p><i class="fas fa-envelope"></i> wetaskiwinchamber@gmail.com</p>
-      </div>
+    <!-- Business Directory -->
+    <section class="business-directory">
+        <div class="container">
+            <div id="directory-container" class="directory-grid">
+                <!-- Businesses will be loaded here by JavaScript -->
+            </div>
+            <div id="loading-message" class="loading">Loading businesses...</div>
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>No businesses found matching your criteria.</p>
+            </div>
+        </div>
+    </section>
 
-      <div class="social-links">
-        <h3>Follow Us</h3>
-        <a href="https://www.facebook.com/yourchamber.ca" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://twitter.com/yourchamberca" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/leduc-regional-chamber-of-commerce" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
+    <!-- Join CTA Section -->
+    <section class="join-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to List Your Business?</h2>
+                <p>Join the Chamber of Commerce to get your business featured in our directory and access exclusive member benefits.</p>
+                <a href="#" class="cta-button">Join Now</a>
+            </div>
+        </div>
+    </section>
 
-      <div class="developer-info">
-        <p>&copy; <span id="currentYear"></span> Wetaskiwin Chamber of Commerce</p>
-        <p>Benjamin Soosay Iwuchukwu | WDD 231</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
-      </div>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>123 Business Avenue</p>
+                    <p>City, State 12345</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: info@chambercommerce.org</p>
+                </div>
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Chamber of Commerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = document.lastModified;
-  </script>
+    <script src="scripts/directory.js"></script>
 </body>
 </html>
