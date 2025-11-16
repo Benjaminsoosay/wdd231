@@ -1,143 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce</title>
-    <meta name="description" content="Local Chamber of Commerce - Connecting businesses and fostering community growth">
-    <link rel="stylesheet" href="styles/chamber.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamber of Commerce</title>
+  <meta name="description" content="Local Chamber of Commerce - Connecting businesses and fostering community growth">
+  <link rel="stylesheet" href="styles/chamber.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Chamber of Commerce</h1>
-            </div>
-            <nav>
-                <button class="menu-toggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header with Navigation -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Chamber of Commerce</h1>
+      </div>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- ✅ Corrected nav menu -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-image">
-            <picture>
-                <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80">
-                <source media="(min-width: 769px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="City skyline with modern buildings" loading="lazy">
-            </picture>
-            <div class="hero-content">
-                <h2>Building a Stronger Business Community</h2>
-                <!-- ✅ Link CTA button to join.html -->
-                <a href="join.html" class="cta-button">Join Today</a>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <picture>
+        <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80">
+        <source media="(min-width: 769px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="City skyline with modern buildings" loading="lazy">
+      </picture>
+      <div class="hero-content">
+        <h2>Building a Stronger Business Community</h2>
+        <!-- ✅ CTA buttons -->
+        <div class="cta-buttons">
+          <a href="index.html" class="cta-button">Home</a>
+          <a href="discover.html" class="cta-button">Discover</a>
+          <a href="directory.html" class="cta-button">Directory</a>
+          <a href="join.html" class="cta-button">Join Today</a>
+          <a href="contact.html" class="cta-button">Contact Us</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Current Events Section -->
-    <section class="current-events">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <h3>Business Networking Mixer</h3>
-                    <p class="event-date">December 15, 2024 | 6:00 PM</p>
-                    <p>Join local business leaders for an evening of networking and collaboration at the Grand Hotel.</p>
-                </div>
-                <div class="event-card">
-                    <h3>Small Business Workshop</h3>
-                    <p class="event-date">January 10, 2025 | 9:00 AM</p>
-                    <p>Learn strategies for growth and marketing in our comprehensive small business workshop.</p>
-                </div>
-                <div class="event-card">
-                    <h3>Annual Gala & Awards</h3>
-                    <p class="event-date">February 20, 2025 | 7:00 PM</p>
-                    <p>Celebrate business excellence at our annual gala and awards ceremony.</p>
-                </div>
-            </div>
+  <!-- Current Events Section -->
+  <section class="current-events">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <h3>Business Networking Mixer</h3>
+          <p class="event-date">December 15, 2024 | 6:00 PM</p>
+          <p>Join local business leaders for an evening of networking and collaboration at the Grand Hotel.</p>
         </div>
-    </section>
-
-    <!-- Weather Section -->
-    <section class="weather">
-        <div class="container">
-            <h2>Local Weather</h2>
-            <div class="weather-content">
-                <div class="current-weather">
-                    <h3>Current Conditions</h3>
-                    <div class="weather-display">
-                        <div class="temp-icon">
-                            <span id="current-temp">--</span>
-                            <img id="weather-icon" src="" alt="" style="display: none;">
-                        </div>
-                        <p id="weather-desc">--</p>
-                        <p>Humidity: <span id="humidity">--</span>%</p>
-                        <p>Wind Speed: <span id="wind-speed">--</span> mph</p>
-                    </div>
-                </div>
-                <div class="forecast">
-                    <h3>3-Day Forecast</h3>
-                    <div class="forecast-days" id="forecast-container">
-                        <!-- JavaScript will populate this -->
-                    </div>
-                </div>
-            </div>
+        <div class="event-card">
+          <h3>Small Business Workshop</h3>
+          <p class="event-date">January 10, 2025 | 9:00 AM</p>
+          <p>Learn strategies for growth and marketing in our comprehensive small business workshop.</p>
         </div>
-    </section>
-
-    <!-- Company Spotlight Section -->
-    <section class="spotlight">
-        <div class="container">
-            <h2>Member Spotlight</h2>
-            <div class="spotlight-container" id="spotlight-container">
-                <!-- JavaScript will populate this -->
-            </div>
+        <div class="event-card">
+          <h3>Annual Gala & Awards</h3>
+          <p class="event-date">February 20, 2025 | 7:00 PM</p>
+          <p>Celebrate business excellence at our annual gala and awards ceremony.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Us</h3>
-                    <p>123 Business Avenue</p>
-                    <p>City, State 12345</p>
-                    <p>Phone: (555) 123-4567</p>
-                    <p>Email: info@chambercommerce.org</p>
-                </div>
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook">Facebook</a>
-                        <a href="#" aria-label="Twitter">Twitter</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    </div>
-                </div>
+  <!-- Weather Section -->
+  <section class="weather">
+    <div class="container">
+      <h2>Local Weather</h2>
+      <div class="weather-content">
+        <div class="current-weather">
+          <h3>Current Conditions</h3>
+          <div class="weather-display">
+            <div class="temp-icon">
+              <span id="current-temp">--</span>
+              <img id="weather-icon" src="" alt="" style="display: none;">
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2024</span> Chamber of Commerce. All rights reserved.</p>
-            </div>
+            <p id="weather-desc">--</p>
+            <p>Humidity: <span id="humidity">--</span>%</p>
+            <p>Wind Speed: <span id="wind-speed">--</span> mph</p>
+          </div>
         </div>
-    </footer>
+        <div class="forecast">
+          <h3>3-Day Forecast</h3>
+          <div class="forecast-days" id="forecast-container">
+            <!-- JavaScript will populate this -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="scripts/chamber.js"></script>
+  <!-- Company Spotlight Section -->
+  <section class="spotlight">
+    <div class="container">
+      <h2>Member Spotlight</h2>
+      <div class="spotlight-container" id="spotlight-container">
+        <!-- JavaScript will populate this -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>123 Business Avenue</p>
+          <p>City, State 12345</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Email: info@chambercommerce.org</p>
+        </div>
+        <div class="social-links">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2024</span> Chamber of Commerce. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/chamber.js"></script>
 </body>
 </html>
