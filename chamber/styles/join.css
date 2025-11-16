@@ -1,8 +1,9 @@
+/* ✅ Reset and Google Font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -25,10 +26,12 @@ body {
 h1, h2, h3, h4 {
     margin-bottom: 1rem;
     color: var(--primary);
+    font-weight: 700;
 }
 
 p {
     margin-bottom: 1rem;
+    font-weight: 400;
 }
 
 .container {
@@ -71,6 +74,7 @@ nav a {
     transition: var(--transition);
     padding: 0.5rem;
     border-radius: 4px;
+    font-weight: 500;
 }
 
 nav a:hover, nav a:focus {
@@ -139,6 +143,7 @@ main {
     color: white;
     padding: 1.5rem;
     text-align: center;
+    font-weight: 600;
 }
 
 .card-body {
@@ -166,6 +171,7 @@ main {
     transition: var(--transition);
     text-align: center;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .card-button:hover {
@@ -191,16 +197,17 @@ label {
     font-weight: 600;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
     transition: var(--transition);
+    font-family: 'Roboto', sans-serif;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--secondary);
     box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
@@ -230,6 +237,7 @@ input:focus, select:focus {
     width: 100%;
     max-width: 200px;
     margin: 2rem auto 0;
+    font-weight: 600;
 }
 
 .submit-btn:hover {
