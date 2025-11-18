@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Membership Registration</title>
+  <title>Join - Chamber of Commerce</title>
+  <meta name="description" content="Join the Chamber of Commerce today and unlock exclusive benefits, networking, and growth opportunities.">
+  <meta name="author" content="Benjamin Soosay">
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Join the Chamber of Commerce">
+  <meta property="og:description" content="Become a member today and access networking, resources, and exclusive benefits.">
+  <meta property="og:image" content="https://benjaminsoosay.github.io/wdd231/images/og-image.png">
+  <meta property="og:url" content="https://benjaminsoosay.github.io/wdd231/join.html">
+
   <link rel="stylesheet" href="styles/join.css">
   <link rel="stylesheet" href="styles/responsive.css">
 </head>
@@ -13,11 +23,10 @@
       <div class="logo">MembershipHub</div>
       <button class="menu-toggle" id="menuToggle">☰</button>
       <nav>
-        <!-- ✅ Updated navigation links -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="discover.html">Discover</a></li>
-          <li><a href="Directory.html">Directory</a></li>
+          <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html" class="active">Join</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -35,36 +44,32 @@
     <section class="cards-section" id="membership">
       <h2>Choose Your Membership Level</h2>
       <div class="cards-container">
-        <!-- Basic -->
         <div class="card">
-          <div class="card-header"><h3>Basic</h3></div>
+          <div class="card-header"><h3>Non-Profit</h3></div>
+          <div class="card-body">
+            <div class="card-price">$0<span>/month</span></div>
+            <button class="card-button view-benefits" data-level="np">View Benefits</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Bronze</h3></div>
           <div class="card-body">
             <div class="card-price">$19<span>/month</span></div>
-            <button class="card-button view-benefits" data-level="basic">View Benefits</button>
+            <button class="card-button view-benefits" data-level="bronze">View Benefits</button>
           </div>
         </div>
-        <!-- Standard -->
         <div class="card">
-          <div class="card-header"><h3>Standard</h3></div>
+          <div class="card-header"><h3>Silver</h3></div>
           <div class="card-body">
             <div class="card-price">$39<span>/month</span></div>
-            <button class="card-button view-benefits" data-level="standard">View Benefits</button>
+            <button class="card-button view-benefits" data-level="silver">View Benefits</button>
           </div>
         </div>
-        <!-- Premium -->
         <div class="card">
-          <div class="card-header"><h3>Premium</h3></div>
+          <div class="card-header"><h3>Gold</h3></div>
           <div class="card-body">
             <div class="card-price">$79<span>/month</span></div>
-            <button class="card-button view-benefits" data-level="premium">View Benefits</button>
-          </div>
-        </div>
-        <!-- Enterprise -->
-        <div class="card">
-          <div class="card-header"><h3>Enterprise</h3></div>
-          <div class="card-body">
-            <div class="card-price">$149<span>/month</span></div>
-            <button class="card-button view-benefits" data-level="enterprise">View Benefits</button>
+            <button class="card-button view-benefits" data-level="gold">View Benefits</button>
           </div>
         </div>
       </div>
@@ -77,38 +82,52 @@
         <div class="form-row">
           <div class="form-group">
             <label for="firstName" class="required">First Name</label>
-            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" title="First Name" required>
           </div>
           <div class="form-group">
             <label for="lastName" class="required">Last Name</label>
-            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" title="Last Name" required>
           </div>
         </div>
         
         <div class="form-group">
           <label for="email" class="required">Email Address</label>
-          <input type="email" id="email" name="email" autocomplete="email" placeholder="example@email.com" required>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="example@email.com" title="Email Address" required>
         </div>
         
         <div class="form-group">
-          <label for="phone" class="required">Phone Number</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          <label for="phone" class="required">Mobile Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" title="Mobile Phone" required>
         </div>
         
+        <!-- ✅ Organization Name -->
         <div class="form-group">
-          <label for="organization" class="required">Business/Organization Name</label>
-          <input type="text" id="organization" name="organization" autocomplete="organization" 
-                 pattern="[A-Za-z\s\-]{7,}" title="Please enter at least 7 alphabetical characters, hyphens, or spaces only" required>
+          <label for="organizationName" class="required">Organization Name</label>
+          <input type="text" id="organizationName" name="organizationName" 
+                 autocomplete="organization" title="Organization Name" required>
+        </div>
+
+        <!-- ✅ Organization Title -->
+        <div class="form-group">
+          <label for="organizationTitle" class="required">Organization Title</label>
+          <input type="text" id="organizationTitle" name="organizationTitle" 
+                 autocomplete="organization-title" 
+                 pattern="[A-Za-z\s\-]{7,}" title="Organization Title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="orgDescription" class="required">Organization Description</label>
+          <textarea id="orgDescription" name="orgDescription" title="Organization Description" rows="4" required></textarea>
         </div>
         
         <div class="form-group">
           <label for="membershipLevel" class="required">Membership Level</label>
-          <select id="membershipLevel" name="membershipLevel" required>
+          <select id="membershipLevel" name="membershipLevel" title="Membership Level" required>
             <option value="">Select a level</option>
-            <option value="basic">Basic - $19/month</option>
-            <option value="standard">Standard - $39/month</option>
-            <option value="premium">Premium - $79/month</option>
-            <option value="enterprise">Enterprise - $149/month</option>
+            <option value="np">Non-Profit</option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
           </select>
         </div>
         
@@ -120,10 +139,53 @@
   </main>
 
   <!-- Modals for benefits -->
-  <div class="modal" id="basicModal"> ... </div>
-  <div class="modal" id="standardModal"> ... </div>
-  <div class="modal" id="premiumModal"> ... </div>
-  <div class="modal" id="enterpriseModal"> ... </div>
+  <div class="modal" id="npModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Non-Profit Membership Benefits</h2>
+      <ul>
+        <li>Access to community resources</li>
+        <li>Networking opportunities</li>
+        <li>Monthly newsletter</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="bronzeModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Bronze Membership Benefits</h2>
+      <ul>
+        <li>All Non-Profit features</li>
+        <li>Discounts on events</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="silverModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Silver Membership Benefits</h2>
+      <ul>
+        <li>All Bronze features</li>
+        <li>Exclusive webinars</li>
+        <li>Early access to new features</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="goldModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Gold Membership Benefits</h2>
+      <ul>
+        <li>All Silver features</li>
+        <li>One-on-one coaching</li>
+        <li>VIP event invitations</li>
+      </ul>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
