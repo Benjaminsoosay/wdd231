@@ -1,0 +1,110 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: #004466;
+  color: #fff;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.site-header h1 {
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* ===== Sections ===== */
+.content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.block {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 5px solid #ff6600;
+  border-radius: 4px;
+}
+
+/* ===== Color Palette ===== */
+.palette {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.swatch {
+  flex: 1;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.swatch-primary { background: #2E86AB; }
+.swatch-secondary { background: #A23B72; }
+.swatch-accent { background: #F18F01; }
+
+/* ===== Typography ===== */
+.font-heading {
+  font-family: 'Lato', sans-serif;
+  color: #2E86AB;
+}
+
+.font-body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+/* ===== Wireframes ===== */
+.wireframes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.frame {
+  flex: 1 1 45%;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+}
+
+.wire-box {
+  background: #004466;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+.wire-content {
+  background: #eaeaea;
+  text-align: center;
+  padding: 20px;
+  margin: 8px 0;
+  border: 1px dashed #999;
+}
+
+@media (max-width: 768px) {
+  .frame {
+    flex: 1 1 100%;
+  }
+}

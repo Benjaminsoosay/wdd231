@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chamber of Commerce Business Directory - Find local businesses and services" />
-  <title>Chamber of Commerce - Business Directory</title>
+  <title>Business Directory | Chamber Directory</title>
+  <meta name="description" content="Explore our community's business directory featuring local members and services." />
   <link rel="stylesheet" href="styles/directory.css" />
 </head>
 <body>
   <header>
     <div class="container">
-      <div class="logo">
-        <h1>Chamber of Commerce</h1>
-      </div>
+      <div class="logo">Chamber<span>Directory</span></div>
       <nav>
-        <button class="menu-toggle" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-menu">
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
           <li><a href="directory.html" class="active">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
           <li><a href="join.html">Join</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -28,100 +23,65 @@
     </div>
   </header>
 
-  <main class="container">
-    <section class="directory-intro">
-      <h2>Business Directory</h2>
-      <p>Discover our valued members and connect with local businesses in our community.</p>
-    </section>
-
-    <section class="directory-gallery">
-      <h3>Featured Members & Highlights</h3>
-
-      <div class="gallery-grid">
-        <figure>
-          <img src="images/family-medical.jpg" alt="Family Healthcare Team" />
-          <figcaption>Family Health Clinic</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/fit-life-gym.jpg" alt="Life Gym community workout session" />
-          <figcaption>Community Fitness Center</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/Parkside-Realty.jpg" alt="Modern multi-story residential building" />
-          <figcaption>Parkside Realty</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/creative-design.jpg" alt="Colorful light bulb symbolizing creativity" />
-          <figcaption>Creative Minds Design</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/main-street-books.jpg" alt="Adult and child reading in bookstore" />
-          <figcaption>Literacy & Learning Initiative</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/hero-large.jpg" alt="Hero at Large movie poster" />
-          <figcaption>Community Film Spotlight</figcaption>
-        </figure>
-
-        <figure>
-          <img src="images/Thumb-Nursery.webp" alt="Green Thumb Nursery logo" />
-          <figcaption>Green Thumb Nursery</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="directory-controls">
+  <main>
+    <section class="directory-header">
+      <h1>Member Directory</h1>
+      <p>Browse our chamber members and learn more about their services.</p>
       <div class="view-toggle">
-        <button id="grid-view" class="active" aria-label="Grid view">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            <rect x="1" y="1" width="8" height="8" rx="1"/>
-            <rect x="11" y="1" width="8" height="8" rx="1"/>
-            <rect x="1" y="11" width="8" height="8" rx="1"/>
-            <rect x="11" y="11" width="8" height="8" rx="1"/>
-          </svg>
-        </button>
-        <button id="list-view" aria-label="List view">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            <rect x="1" y="1" width="18" height="2" rx="1"/>
-            <rect x="1" y="7" width="18" height="2" rx="1"/>
-            <rect x="1" y="13" width="18" height="2" rx="1"/>
-            <rect x="1" y="17" width="18" height="2" rx="1"/>
-          </svg>
-        </button>
+        <button id="grid-view" aria-label="Grid view">🔲 Grid</button>
+        <button id="list-view" aria-label="List view">📋 List</button>
       </div>
     </section>
 
-    <section class="directory-content">
-      <div id="members-grid" class="members-grid"></div>
-      <div id="members-list" class="members-list hidden"></div>
+    <section id="members-container" class="grid-view">
+      <!-- Member cards will be injected here -->
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="contact-info">
-          <h3>Chamber of Commerce</h3>
-          <p>123 Main Street, City, State 12345</p>
-          <p>info@chambercommerce.org</p>
-          <p>(555) 123-4567</p>
-        </div>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; <span id="current-year"></span> Chamber of Commerce. All rights reserved.</p>
-      </div>
-    </div>
+    <p>&copy; <span id="year"></span> Chamber Directory</p>
   </footer>
 
-  <script src="scripts/directory.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const container = document.getElementById("members-container");
+    const gridBtn = document.getElementById("grid-view");
+    const listBtn = document.getElementById("list-view");
+
+    gridBtn.addEventListener("click", () => {
+      container.classList.add("grid-view");
+      container.classList.remove("list-view");
+    });
+
+    listBtn.addEventListener("click", () => {
+      container.classList.add("list-view");
+      container.classList.remove("grid-view");
+    });
+
+    async function loadMembers() {
+      try {
+        const response = await fetch("data/members.json");
+        const members = await response.json();
+
+        members.forEach(member => {
+          const card = document.createElement("div");
+          card.className = "member-card";
+          card.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" loading="lazy" />
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank" class="btn">Visit Website</a>
+          `;
+          container.appendChild(card);
+        });
+      } catch (error) {
+        container.innerHTML = "<p>Error loading member data.</p>";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadMembers);
+  </script>
 </body>
 </html>
