@@ -1,0 +1,60 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Green Valley Grocers",
+      "address": "123 Market Street",
+      "description": "Family-owned grocery store offering fresh, locally-sourced produce and organic products.",
+      "image": "images/grocers.webp"
+    },
+    {
+      "id": 2,
+      "name": "Tech Solutions Inc.",
+      "address": "456 Innovation Drive",
+      "description": "Providing cutting-edge IT services and digital transformation solutions for businesses of all sizes.",
+      "image": "images/tech.webp"
+    },
+    {
+      "id": 3,
+      "name": "Heritage Bank",
+      "address": "789 Main Street",
+      "description": "Trusted financial institution serving the community with personalized banking solutions.",
+      "image": "images/bank.webp"
+    },
+    {
+      "id": 4,
+      "name": "Sunrise Cafe",
+      "address": "321 Coffee Lane",
+      "description": "Cozy neighborhood cafe serving artisanal coffee, fresh pastries, and light meals.",
+      "image": "images/cafe.webp"
+    },
+    {
+      "id": 5,
+      "name": "Family Health Clinic",
+      "address": "654 Wellness Avenue",
+      "description": "Comprehensive healthcare services for the entire family with a focus on preventive care.",
+      "image": "images/clinic.webp"
+    },
+    {
+      "id": 6,
+      "name": "Creative Minds Design",
+      "address": "987 Artisan Road",
+      "description": "Award-winning design agency specializing in branding, web design, and marketing materials.",
+      "image": "images/design.webp"
+    },
+    {
+      "id": 7,
+      "name": "Parkside Realty",
+      "address": "147 Oak Street",
+      "description": "Full-service real estate agency helping families find their dream homes in our community.",
+      "image": "images/realty.webp"
+    },
+    {
+      "id": 8,
+      "name": "Community Fitness Center",
+      "address": "258 Health Way",
+      "description": "State-of-the-art fitness facility with group classes, personal training, and wellness programs.",
+      "image": "images/fitness.webp"
+    }
+  ]
+}

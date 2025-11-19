@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Our Community | Chamber of Commerce</title>
+  <meta name="description" content="Explore the rich history, attractions, and businesses in our community. Learn about local events and landmarks.">
+
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Discover Our Community | Chamber of Commerce">
+  <meta property="og:description" content="Explore the rich history, attractions, and businesses in our community.">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
+  <link rel="preload" href="styles/discover.css" as="style">
+  <link rel="stylesheet" href="styles/discover.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Chamber of Commerce Logo" width="50" height="50">
+        <h1>Community Chamber</h1>
+      </div>
+      <button class="hamburger" id="hamburger">☰</button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html" class="active">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Discover Our Community</h2>
+      <p>Explore the rich history, attractions, and businesses that make our community unique</p>
+    </section>
+
+    <div class="visit-message" id="visit-message"></div>
+
+    <div class="discover-grid">
+      <aside class="sidebar">
+        <div class="demographics">
+          <h3>Community Demographics</h3>
+          <ul>
+            <li><strong>Population:</strong> 45,000</li>
+            <li><strong>Median Age:</strong> 38 years</li>
+            <li><strong>Median Income:</strong> $65,000</li>
+            <li><strong>Education:</strong> 35% Bachelor's Degree or Higher</li>
+            <li><strong>Employment Rate:</strong> 96%</li>
+          </ul>
+        </div>
+
+        <div class="events">
+          <h3>Upcoming Events</h3>
+          <ul>
+            <li><strong>June 15:</strong> Annual Community Fair</li>
+            <li><strong>July 4:</strong> Independence Day Celebration</li>
+            <li><strong>August 12:</strong> Business Networking Breakfast</li>
+            <li><strong>September 8:</strong> Harvest Festival</li>
+          </ul>
+        </div>
+
+        <div class="attractions">
+          <h3>Local Attractions</h3>
+          <div class="attractions-grid">
+            <div class="attraction">
+              <img src="images/Community-Park.jpg" alt="Community Park" loading="lazy">
+              <p>Community Park</p>
+            </div>
+            <div class="attraction">
+              <img src="images/History-Museum.webp" alt="History Museum" loading="lazy">
+              <p>History Museum</p>
+            </div>
+            <div class="attraction">
+              <img src="images/Crystal-Lake.jpg" alt="Crystal Lake" loading="lazy">
+              <p>Crystal Lake</p>
+            </div>
+            <div class="attraction">
+              <img src="images/Botanical-Garden.jpg" alt="Botanical Garden" loading="lazy">
+              <p>Botanical Garden</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="cards-section">
+        <h2>Local Business Spotlights</h2>
+        <div class="cards-container" id="cards-container"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <img src="images/community-chambers.png" alt="Chamber of Commerce Logo" width="40" height="40">
+        <h3>Community Chamber</h3>
+      </div>
+      <div class="contact-info">
+        <p>123 Main Street, Community City, CC 12345</p>
+        <p>info@communitychamber.org</p>
+        <p>(555) 123-4567</p>
+      </div>
+      <div class="social-links">
+        <a href="#">📘</a>
+        <a href="#">🐦</a>
+        <a href="#">📷</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="current-year"></span> Community Chamber of Commerce</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('show');
+    });
+
+    // Footer year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Last visit message
+    function displayVisitMessage() {
+      const visitMessage = document.getElementById('visit-message');
+      const lastVisit = localStorage.getItem('lastVisit');
+      const currentDate = new Date();
+
+      if (!lastVisit) {
+        visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+      } else {
+        const lastVisitDate = new Date(lastVisit);
+        const daysDiff = Math.floor((currentDate - lastVisitDate) / (1000 * 60 * 60 * 24));
+        if (daysDiff < 1) {
+          visitMessage.textContent = "Back so soon! Awesome!";
+        } else {
+          const dayText = daysDiff === 1 ? "day" : "days";
+          visitMessage.textContent = `You last visited ${daysDiff} ${dayText} ago.`;
+        }
+      }
+      localStorage.setItem('lastVisit', currentDate.toString());
+    }
+    displayVisitMessage();
+
+    // Load member spotlights
+    async function loadMemberSpotlights() {
+      try {
+        const response = await fetch('scripts/member-spotlights.json');
+        const data = await response.json();
+        displayMemberSpotlights(data.members);
+      } catch (error) {
+        console.error('Error loading member data:', error);
+      }
+    }
+
+    function displayMemberSpotlights(members) {
+      const container = document.getElementById('cards-container');
+      container.innerHTML = '';
+      members.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${member.image}" alt="${member.name}" class="card-img">
+          <div class="card-content">
+            <h3>${member.name}</h3>
+            <p class="card-address">${member.address}</p>
+            <p class="card-description">${member.description}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    loadMemberSpotlights();
+  </script>
+</body>
+</html>
