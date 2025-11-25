@@ -23,14 +23,14 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Updated to Google Font */
+    font-family: 'Roboto', sans-serif; /* Google Font for body */
     line-height: 1.6;
     color: var(--text);
     background-color: #f9f9f9;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif; /* Headings use a different Google Font */
+    font-family: 'Poppins', sans-serif; /* Google Font for headings */
 }
 
 a {
@@ -221,21 +221,15 @@ section {
     display: grid;
     gap: 2rem;
     margin-top: 2rem;
+    grid-template-columns: 1fr; /* consolidated mobile layout */
 }
 
-/* Mobile layout - 1 column */
-.cards-container {
-    grid-template-columns: 1fr;
-}
-
-/* Tablet layout - 2 columns */
 @media (min-width: 768px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Desktop layout - 3 columns */
 @media (min-width: 1024px) {
     .cards-container {
         grid-template-columns: repeat(3, 1fr);
@@ -385,4 +379,15 @@ footer {
 }
 
 .social-links {
-    display:
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color:
