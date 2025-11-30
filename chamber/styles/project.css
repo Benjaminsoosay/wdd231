@@ -1,0 +1,102 @@
+/* Theme Colors */
+:root {
+  --primary-color: #2E5077;   /* Dark Blue */
+  --secondary-color: #F0F0F0; /* Light Gray */
+  --accent-color: #FF6B35;    /* Orange */
+  --text-color: #333333;      /* Dark Gray */
+}
+
+/* Base Styles */
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+  background-color: var(--secondary-color);
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', Verdana, sans-serif;
+  color: var(--primary-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  background: #fff;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Color Palette */
+.palette {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.swatch {
+  flex: 1;
+  height: 80px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swatch.blue { background: var(--primary-color); }
+.swatch.gray { background: var(--secondary-color); color: var(--text-color); border: 1px solid #ccc; }
+.swatch.orange { background: var(--accent-color); }
+
+/* Wireframes */
+.wireframes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.frame {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.frame-header, .frame-footer {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+.frame-footer { margin-top: .5rem; }
+
+.frame-content {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .wireframes {
+    grid-template-columns: 1fr;
+  }
+}
